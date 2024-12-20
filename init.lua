@@ -5,4 +5,5 @@ require 'globals'
 require 'options'
 require 'mappings'
 require 'autocmd'
+require 'config.lazy'
 
