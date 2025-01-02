@@ -1,4 +1,4 @@
--- todo-comments
+-- Todo Comments
 
 -- Highlight todo, notes, etc in comments
 
@@ -30,9 +30,9 @@
 -- FAILED: Test this
 
 return {
-  'folke/todo-comments.nvim',
-  event = 'VimEnter',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  "folke/todo-comments.nvim",
+  event = "VimEnter",
+  dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
 
     -- Add signs in the sign bar
@@ -49,11 +49,22 @@ return {
       require("todo-comments").jump_prev()
     end, { desc = "Previous todo comment" }),
 
+    -- TODO: add to keys option
     -- Add fuzzy finding with telescope
-    vim.keymap.set("n", "<leader>sta", "<cmd>TodoTelescope<CR>", {desc = "[S]earch [T]odos - [A]ll"}),
-    vim.keymap.set("n", "<leader>stt", "<cmd>TodoTelescope keywords=TODO<CR>", {desc = "[S]earch [T]odos - [T]odos"}),
-    vim.keymap.set("n", "<leader>ste", "<cmd>TodoTelescope keywords=FIX,FIXME,BUG,FIXIT,ISSUE,WARN,WARNING,XXX<CR>", {desc = "[S]earch [T]odos - [E]rrors"}),
-    vim.keymap.set("n", "<leader>sts", "<cmd>TodoTelescope keywords=TEST,TESTING,PASSED,FAILED<CR>", {desc = "[S]earch [T]odos - Te[S]ting"}),
-    vim.keymap.set("n", "<leader>stn", "<cmd>TodoTelescope keywords=NOTE,INFO<CR>", {desc = "[S]earch [T]odos - [N]otes"}),
+    vim.keymap.set("n", "<leader>ta", "<cmd>TodoTelescope<CR>", { desc = "[T]odos - [A]ll" }),
+    vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope keywords=TODO<CR>", { desc = "[T]odos - [T]odos" }),
+    vim.keymap.set(
+      "n",
+      "<leader>te",
+      "<cmd>TodoTelescope keywords=FIX,FIXME,BUG,FIXIT,ISSUE,WARN,WARNING,XXX<CR>",
+      { desc = "[T]odos - [E]rrors" }
+    ),
+    vim.keymap.set(
+      "n",
+      "<leader>ts",
+      "<cmd>TodoTelescope keywords=TEST,TESTING,PASSED,FAILED<CR>",
+      { desc = "[T]odos - Te[S]ting" }
+    ),
+    vim.keymap.set("n", "<leader>tn", "<cmd>TodoTelescope keywords=NOTE,INFO<CR>", { desc = "[T]odos - [N]otes" }),
   },
 }
