@@ -22,6 +22,7 @@ return {
       python = { "isort", "black" },
       cpp = { "clang-format" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
+      go = { "crlfmt" },
     },
     -- Set default options
     default_format_opts = {

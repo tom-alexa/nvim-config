@@ -3,7 +3,10 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  dependencies = { "vim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
+  dependencies = {
+    -- "vim-tree/nvim-web-devicons",
+    "echasnovski/mini.icons",
+  },
   opts = {
     preset = "modern", -- <classic, modern, helix>
     spec = {
